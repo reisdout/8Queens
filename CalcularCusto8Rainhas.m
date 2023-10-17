@@ -8,22 +8,58 @@ function Custo8Rainhas = CalcularCusto8Rainhas(parDistribuicao)
     tamTab = numel(parDistribuicao)
     
     %custo na horizontal
-    for i = 1:tamTab
+    for i = 1:tamTab-1
 
-        for j = i:tamTab
+        for j = i+1:tamTab
 
             if parDistribuicao(i) == parDistribuicao(j)
-                hit = hit+1;
+                hit = hit+1
+                disp(i)
+                disp(j)
+           
             end
 
         end
     end
 
-    %custo diagonal superior
+    %custo diagonal ascendente
     
-    for i = 1:tamTab
-        for j = i:tamTab
-        disp(parDistribuicao(i))
-        parc = parc + parDistribuicao(i);
+    for i = 1:tamTab-1
+        for j = 1:tamTab-i
+            if (parDistribuicao(i)+j) > tamTab
+                break;
+            end
+            if (parDistribuicao(i)+j) == parDistribuicao(i+j)
+
+                hit = hit+1
+                disp(i)
+                disp(j)
+
+            end
+        end
     end
-    Custo8Rainhas = parc;
+   
+
+    %custo diagonal descendente
+    
+    for i = 1:tamTab-1
+        for j = 1:tamTab-i
+            if (parDistribuicao(i)-j) < 1
+                break;
+            end
+            if (parDistribuicao(i)-j) == parDistribuicao(i+j)
+
+                hit = hit+1
+                disp(i)
+                disp(j)
+
+            end
+        end
+
+    end
+    Custo8Rainhas = 28-hit;
+
+
+
+
+

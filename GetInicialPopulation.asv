@@ -1,0 +1,18 @@
+
+
+function InicialPopulation = GetInicialPopulation(parMinBound, parMaxBound,parDimension, parPopSize)
+    
+        
+        tempPor = zeros(parPopSize,parDimension);
+
+        for i = 1:parPopSize
+
+            for j = 1:parDimension
+
+                x= parMinBound + rand()*(parMaxBound-parMinBound)
+           
+            end
+
+            
+        end
+    

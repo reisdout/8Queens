@@ -1,0 +1,17 @@
+function donorVector = GetDonorVector(parPoP)
+
+        [popSize,domainDimension] = size(parPoP);
+
+        for i = 1:
+
+            for j = 1:parDimension
+
+                x= round(parMinBound + rand()*(parMaxBound-parMinBound))
+
+                tmpPop(i,j) = x; 
+           
+            end
+
+            
+        end
+    
